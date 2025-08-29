@@ -1,0 +1,342 @@
+.theme-switch-wrapper {
+  margin-top: 20px;
+}
+
+.theme-switch {
+  display: inline-block;
+  height: 34px;
+  position: relative;
+  width: 60px;
+}
+
+.theme-switch input {
+  display: none;
+}
+
+.slider {
+  background-color: #ccc;
+  border-radius: 34px;
+  cursor: pointer;
+  height: 100%;
+  position: relative;
+  transition: 0.4s;
+}
+
+.slider::before {
+  background-color: white;
+  border-radius: 50%;
+  bottom: 4px;
+  content: "";
+  height: 26px;
+  left: 4px;
+  position: absolute;
+  transition: 0.4s;
+  width: 26px;
+  z-index: 1;
+}
+
+/* Sun and Moon icons inside slider */
+.sun,
+.moon {
+  position: absolute;
+  top: 6px;
+  font-size: 18px;
+  z-index: 2;
+}
+
+.sun {
+  left: 5px;
+  color: white;
+}
+
+.moon {
+  right: 4px;
+  color: #f1c40f;
+}
+
+/* Dark mode active */
+input:checked+.slider {
+  background-color: #666;
+}
+
+input:checked+.slider::before {
+  transform: translateX(26px);
+}
+
+/* Body color variables */
+:root {
+  --bg-color: #ffffff;
+  --text-color: #000000;
+  --header-bg: #f4f4f4;
+  --link-color: #007bff;
+  --h3-color:red;
+  --contact-bg: #f1f1f1;
+  --contact-text:#222;
+}
+
+body.dark-mode {
+  --bg-color: #1c1c1e;
+  --text-color: #f0f0f0;
+  --header-bg: #f1f12e;
+  --link-color: #00ffb7;
+  background: #121212;
+  --h3-color:rgb(0, 255, 8);
+  --contect-bg: #1e1e1e;
+  --contact-text: #fff;
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+}
+
+#header {
+  background-color: var(--header-bg);
+}
+
+.nav-link,
+#header a {
+  color: var(--text-color);
+}
+
+/* ........... */
+
+/* Sidebar style    ..... */
+#header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 250px;
+  height: 100vh;
+  background: var(--header-bg);
+  /* color: #fff; */
+  color: var(--text-color);
+  padding: 20px;
+  overflow-y: auto;
+  z-index: 1000;
+  text-align: center;
+}
+
+#header img {
+  border: 2px solid var(--text-color);
+  margin-bottom: 15px;
+}
+
+#header h1 a {
+  color: var(--text-color);
+  text-decoration: none;
+  font-size: 20px;
+  font-family: 'Times New Roman', Times, serif;
+  font-weight: bold;
+}
+
+#header .nav-link {
+  color: var(--text-color);
+  margin: 10px 0;
+  display: block;
+}
+
+#header .nav-link:hover {
+  color: rgb(44, 2, 254);
+  background-color: var(--text-color);
+  border-radius: 30px;
+  border-color: #f9f9f9;
+  text-transform: lowercase;
+
+}
+
+.hero-container {
+  background-image: url(wallpaperflare.com_wallpaper\ \(3\).jpg);
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  position: relative;
+  width: 100%;
+}
+
+.hero-container h1 {
+  font-size: 7vw;
+  font-weight: bold;
+  text-shadow: 3px 3px 10px rgb(251, 0, 255);
+  font-family: 'Times New Roman', Times, serif;
+}
+.hero-container p {
+  font-size: 30px;
+  color: #0021f8;
+}
+
+h2 {
+  color: #0021f8;
+}
+h3{
+  color:darkmagenta;
+  color:var(--h3-color)
+}
+a {
+  text-decoration:none;
+}
+
+/* (Optional) Google Fonts: Inter for EN, Noto Nastaliq Urdu for UR */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Noto+Nastaliq+Urdu:wght@400;600&display=swap');
+
+.first-p  {
+  /* readable width + center */
+  max-width: 68ch;
+  margin-inline: auto;
+  padding-inline: 16px;
+
+  /* beautiful, responsive size */
+  font-size: clamp(16px, 1.8vw, 20px);
+  line-height: 1.9;
+
+  /* equal edges */
+  text-align: justify;
+  text-justify: inter-word;
+
+  /* nicer paragraph texture */
+  hyphens: auto;          /* EN me kaam aata hai */
+  letter-spacing: 0.1px;  /* halki si polishing */
+}
+
+/* Urdu font + direction already dir="rtl" se aa jayega */
+.about-ur{
+  font-family: "Noto Nastaliq Urdu", "Jameel Noori Nastaleeq", serif;
+}
+
+/* English font */
+.about-en{
+  font-family: "Inter", system-ui, -apple-system, "Segoe UI", Arial, sans-serif;
+}
+
+/* Mobile pe thoda zyada readable spacing */
+@media (max-width: 480px){
+  .about{ line-height: 2; }
+}
+
+/* Body margin to not overlap sidebar */
+body {
+  margin-left: 250px;
+}
+
+
+.social-links a {
+  color: var(--link-color);
+  font-size: 20px;
+  margin: 0 10px;
+  transition: color 0.3s;
+  display: inline-flex;
+  position: relative;
+}
+
+.social-links a:hover {
+  color: #0021f8;
+}
+
+body.dark-mode .social-links a {
+  color: var(--link-color);
+}
+
+body.dark-mode .social-links a:hover {
+  color: #00ffcc;
+}
+
+.social-links a i {
+  color: inherit;
+}
+
+
+
+/* Contact Section */
+.contact {
+  padding: 60px 20px;
+  background: var(--bg-color);
+  color: var(--text-color);
+}
+
+.contact .section-title {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+/* .contact .section-title h2 {
+  font-size: 32px;
+  font-weight: 700;
+  color: var(--text-color);
+} */
+
+/* .contact .section-title p {
+  font-size: 16px;
+  color: var(--text-color);
+  opacity: 0.8;
+} */
+
+/* Info Box */
+.contact .info {
+
+  background: var(--contact-bg);
+  color:var(--contact-text) ;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(246, 7, 7, 0.1);
+}
+
+.contact .info p {
+  font-size: 15px;
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  color: var(--text-color);
+}
+
+.contact .info i {
+  color: var(--link-color);
+  margin-right: 8px;
+  font-size: 18px;
+}
+
+/* Contact Form */
+.php-email-form {
+  background: var(--header-bg);
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.php-email-form input,
+.php-email-form textarea {
+  width: 100%;
+  padding: 12px 15px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  margin-bottom: 15px;
+  font-size: 15px;
+  background: var(--bg-color);
+  color: var(--text-color);
+  transition: 0.3s;
+}
+
+.php-email-form input:focus,
+.php-email-form textarea:focus {
+  border-color: var(--link-color);
+  outline: none;
+  box-shadow: 0 0 6px rgba(81, 0, 255, 0.4);
+}
+
+.php-email-form button {
+  background: var(--link-color);
+  border: none;
+  padding: 12px 25px;
+  color: #fff;
+  border-radius: 8px;
+  font-size: 16px;
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+.php-email-form button:hover {
+  filter: brightness(90%);
+}
